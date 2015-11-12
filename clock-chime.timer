@@ -1,0 +1,8 @@
+[Unit]
+Description=Clock chimes
+
+[Timer]
+OnCalendar=*-*-* *:0/15:*
+
+[Install]
+WantedBy=default.target
