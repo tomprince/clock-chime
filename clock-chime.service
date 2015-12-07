@@ -3,3 +3,4 @@ Description=Clock Chimes
 
 [Service]
 ExecStart=/home/tomprince/bin/clock-chime
+Type=oneshot

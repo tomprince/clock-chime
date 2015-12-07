@@ -3,6 +3,7 @@ Description=Clock chimes
 
 [Timer]
 OnCalendar=*-*-* *:0/15:*
+AccuracySec=1s
 
 [Install]
 WantedBy=default.target
