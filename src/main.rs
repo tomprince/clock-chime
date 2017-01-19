@@ -5,13 +5,14 @@ extern crate rodio;
 extern crate lazy_static;
 
 use chrono::Timelike;
-use std::fs::File;
-use std::io::BufReader;
 use std::path::{Path, PathBuf};
 
 lazy_static!{
     static ref DATA: &'static Path = &Path::new("/usr/share/sounds/freedesktop/stereo/");
 }
+
+mod audio;
+use audio::play_file;
 
 fn main() {
     let now = chrono::Local::now();
@@ -22,17 +23,4 @@ fn main() {
     let file = format!("grandfather-clock-chime-{}", hour.format("%I"));
     let path = DATA.join(PathBuf::from(file).with_extension("wav"));
     play_file(path);
-}
-
-fn play_file<P: AsRef<Path>>(file: P) {
-    let endpoint = rodio::get_default_endpoint().unwrap();
-    let sink = rodio::Sink::new(&endpoint);
-
-    let file = File::open(file).unwrap();
-    let source = rodio::Decoder::new(BufReader::new(file)).unwrap();
-
-
-
-    sink.append(source);
-    sink.sleep_until_end();
 }
