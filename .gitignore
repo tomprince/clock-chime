@@ -1,3 +1,8 @@
 sounds/*.wav
 Cargo.lock
 target
+x86_64
+clock-chime-0.1.2/
+clock-chime-0.1.2.tar.gz
+clock-chime-0.1.2-1.fc26.src.rpm
+.build-0.1.2-1.fc26.log
