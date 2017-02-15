@@ -42,7 +42,7 @@ fn run() -> Result<()> {
             .takes_value(true))
         .get_matches();
 
-    let volume = value_t!(matches, "config", f32).unwrap_or(0.4);
+    let volume = value_t!(matches, "volume", f32).unwrap_or(0.4);
 
     play(volume)
 }

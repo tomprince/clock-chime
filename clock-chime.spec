@@ -1,5 +1,5 @@
 Name:           clock-chime
-Version:        0.1.1
+Version:        0.1.2
 Release:        1%{?dist}
 Summary:        Hourly clock chime.
 
@@ -39,6 +39,9 @@ install -t %{buildroot}%{_datadir}/sounds/freedesktop/stereo/ sounds/*.wav
 
 
 %changelog
+* Wed Feb 15 2017 Tom Prince <tom.prince@ualberta.net>
+- Fix processing volume-configuration from command-line.
+
 * Wed Jan 25 2017 Tom Prince <tom.prince@ualberta.net>
 - Add volume configuration
 
